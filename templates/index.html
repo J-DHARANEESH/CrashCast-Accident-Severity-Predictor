@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Accident Severity Predictor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+<form method="POST">
+    <h2>Accident Severity Predictor</h2>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="weather_condition">Weather Condition</label>
+            <input id="weather_condition" name="Weather_Condition" placeholder="e.g., Clear, Rain, Snow" required>
+        </div>
+        <div class="form-group">
+            <label for="amenity">Amenity</label>
+            <input id="amenity" name="Amenity" placeholder="True or False" required>
+        </div>
+        <div class="form-group">
+            <label for="bump">Bump</label>
+            <input id="bump" name="Bump" placeholder="True or False" required>
+        </div>
+        <div class="form-group">
+            <label for="crossing">Crossing</label>
+            <input id="crossing" name="Crossing" placeholder="True or False" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="junction">Junction</label>
+            <input id="junction" name="Junction" placeholder="True or False" required>
+        </div>
+        <div class="form-group">
+            <label for="traffic_signal">Traffic Signal</label>
+            <input id="traffic_signal" name="Traffic_Signal" placeholder="True or False" required>
+        </div>
+        <div class="form-group">
+            <label for="sunrise_sunset">Sunrise/Sunset</label>
+            <input id="sunrise_sunset" name="Sunrise_Sunset" placeholder="Day or Night" required>
+        </div>
+        <div class="form-group">
+            <label for="temperature">Temperature (F)</label>
+            <input id="temperature" name="Temperature(F)" type="number" step="any" placeholder="e.g., 72.5" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="humidity">Humidity (%)</label>
+            <input id="humidity" name="Humidity(%)" type="number" step="any" placeholder="e.g., 60" required>
+        </div>
+        <div class="form-group">
+            <label for="pressure">Pressure (in)</label>
+            <input id="pressure" name="Pressure(in)" type="number" step="any" placeholder="e.g., 29.92" required>
+        </div>
+        <div class="form-group">
+            <label for="visibility">Visibility (mi)</label>
+            <input id="visibility" name="Visibility(mi)" type="number" step="any" placeholder="e.g., 10" required>
+        </div>
+        <div class="form-group">
+            <label for="wind_speed">Wind Speed (mph)</label>
+            <input id="wind_speed" name="Wind_Speed(mph)" type="number" step="any" placeholder="e.g., 5" required>
+        </div>
+    </div>
+
+    <button type="submit">Predict</button>
+
+    {% if prediction is not none %}
+        <h3>Predicted Severity: {{ prediction }}</h3>
+    {% elif error %}
+        <h3 class="error">Error: {{ error }}</h3>
+    {% endif %}
+</form>
+</body>
+</html>

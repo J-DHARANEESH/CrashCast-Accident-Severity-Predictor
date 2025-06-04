@@ -1,0 +1,123 @@
+html, body {
+    margin: 0; padding: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('img1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    width: 90vw;
+    max-width: 1100px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Horizontal layout for rows of form groups */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Each label-input group with fixed width */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 220px; /* grow/shrink with minimum width 220px */
+    max-width: 250px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #e0e0e0;
+}
+
+input, select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+input::placeholder {
+    color: #d1d1d1;
+    font-style: italic;
+}
+
+input:focus, select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px 2px #007bff;
+    color: #fff;
+}
+
+/* Remove number input spinners */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h3 {
+    margin-top: 25px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+h3.error {
+    color: #ff4c4c;
+}
